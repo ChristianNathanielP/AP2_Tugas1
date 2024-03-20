@@ -21,11 +21,11 @@ main() {
     if (anak == 0){ //Tidak ada anak maka tidak ada gaji tambahan
         gajiAnak = 0;
     }
-    else if(anak == 1 || anak == 2) { //Jumlah anak 1 dan 2 -> Gaji tambahan = 500.000
-        gajiAnak = 500000;
+    else if(anak == 1 || anak == 2) { //Jumlah anak 1 dan 2 -> Gaji tambahan = 500.000 per anak
+        gajiAnak = 500000 * anak;
     } 
-    else if(anak > 2) { //Jumlah anak lebih dari 2 -> Gaji tambahan = 750.000
-        gajiAnak = 750000;
+    else if(anak > 2) { //Jumlah anak lebih dari 2 -> Gaji tambahan = 750.000 per anak
+        gajiAnak = 750000 * anak;
     }
 
     cout<<"Gaji total : Rp. "<<(int)((golGaji * 0.95 + gajiAnak))<<",-"; // Perhitungan Gaji, hasil menjadi integer
