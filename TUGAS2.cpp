@@ -5,24 +5,26 @@ using namespace std;
 int main ()
 {
     system ("CLS"); //untuk membersihkan monitor
-    int banyak_anak;
-    string golongan;
-    float tunjangan_anak, gaji_bersih, gaji_kotor, pajak;
-    
-    cout << "Masukkan Golongan (I/II/III)   : ";   cin >> golongan;
+    string nama;
+    int banyak_anak, golongan;
+    float tunjangan_anak, gaji_total, pajak;
+
+    cout << "Masukkan nama anda             : ";
+    getline(cin, nama);
+    cout << "Masukkan Golongan (1/2/3)      : ";   cin >> golongan;
     cout << "Masukkan Jumlah Anak           : ";   cin >> banyak_anak;
     
     float gaji_pokok = 0;
     //seleksi golongan si user
-    if (golongan == "I") 
+    if (golongan == 1) 
     {
         gaji_pokok = 5000000;
     }
-        else if (golongan == "II") 
+        else if (golongan == 2) 
         {
             gaji_pokok = 3000000;
         }
-            else if (golongan == "III") 
+            else if (golongan == 3) 
             {
                 gaji_pokok = 2500000;
             }
@@ -42,19 +44,15 @@ int main ()
             }
 
     //rumus untuk hasil yang akan ditampilkan
-    gaji_kotor   = gaji_pokok + tunjangan_anak;
-    pajak       = gaji_kotor * 0.05;
-    gaji_bersih = gaji_kotor - pajak;
+    gaji_total = gaji_pokok * 0.95 + tunjangan_anak * banyak_anak;
     
     cout << fixed << setprecision(0); //digunakan agar tidak ada angka dibelakang koma dan nilai akhir akan dibulatkan
-    
+
     system("CLS");
+    cout << "Nama               : "     <<               nama            << endl;
     cout << "Golongan anda      : "     <<               golongan        << endl;
     cout << "Jumlah anak        : "     <<               banyak_anak     << endl;
-    cout << "Gaji Pokok         : Rp. " << setw(10)  <<  gaji_pokok      << endl;
-    cout << "Tunjangan Anak     : Rp. " << setw(10)  <<  tunjangan_anak  << endl;
-    cout << "Gaji Kotor         : Rp. " << setw(10)  <<  gaji_kotor      << endl; 
-    cout << "Gaji Bersih        : Rp. " << setw(10)  <<  gaji_bersih     << endl;
+    cout << "Gaji Total         : Rp. " << setw(10)  <<  gaji_total      << endl; 
     //fungsi setw(10) digunakan untuk mengatur lebar kolom output menjadi 10 karakter
     
     return(0);
