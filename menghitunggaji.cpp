@@ -1,9 +1,10 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip> 
 #include <string>
 using namespace std;
 
 int main() {
+    // deklarasi variabel
     string nama;
     int golongan, jumlah_anak;
     double gaji_pokok, pajak, tambahan_anak;
@@ -28,10 +29,9 @@ int main() {
             break;
         default:
             cout << "Golongan yang dimasukkan tidak valid." << endl;
-            return 1;
     }
 
-    // Hitung pajak (5% dari gaji pokok)
+    // Hitung pajak 
     pajak = 0.05 * gaji_pokok;
 
     // Hitung tambahan uang per anak
@@ -44,8 +44,7 @@ int main() {
     // Hitung gaji total
     double gaji_total = gaji_pokok - pajak + tambahan_anak;
 
-    // Format gaji_total menjadi string dengan format Rp. X.XXX.XXX,-
-    cout << "Gaji total untuk " << nama << ": Rp. " << fixed << setprecision(0) << gaji_total << ",-" << endl;
-
-    return 0;
+    // Output Hasil
+    cout << "Gaji total untuk " << nama << ": Rp. " << fixed << setprecision(0) << gaji_total << ",-" << endl; 
+    // fixed untuk menampilkan bilangan dengan notasi tetap
 }
